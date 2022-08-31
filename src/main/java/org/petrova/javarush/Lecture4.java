@@ -1,6 +1,6 @@
 package org.petrova.javarush;
 
-public class lecture4 {
+public class Lecture4 {
     public static void main(String[] args) {
         int a = 64;
         int b = a / 8;
@@ -13,8 +13,9 @@ public class lecture4 {
         }
         a1();
         a2();
+        a3(10);
         for (int n = 1; n < 10; n = n + 1) {
-            a2();
+            a3(n);
         }
     }
 
@@ -26,5 +27,10 @@ public class lecture4 {
         System.out.println("a2");
     }
 
+    public static void a3(int p1) {
+        System.out.println("a3,p1=" + p1);
+    }
+
 }
+
 
