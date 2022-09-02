@@ -12,9 +12,9 @@ public class Lecture3_3 {
     public static void a1() {
         int age = 35;
 
-        boolean isYoung = (age < 18);// 35 меньше 18 - ложь
-        if (!isYoung && age <= 65)// если (НЕ меньше 18?  И меньше равно 65), то можете работать
-            System.out.println("Вы можете работать");
+        boolean isYoung =(age < 18);// 35 меньше 18 - ложь
+        if (!isYoung && age <= 65) ; // если (НЕ меньше 18 И меньше равно  65),то можете работать
+        System.out.println("Вы можете работать");
     }
 
     public static void a2() {
