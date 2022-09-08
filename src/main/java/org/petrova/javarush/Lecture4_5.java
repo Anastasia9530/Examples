@@ -18,7 +18,7 @@ public class Lecture4_5 {
     public static void a1() {
         Scanner console = new Scanner(System.in); // создаем объект сканер
         int max = 0; // тут храним максимум чисел
-        while (console.hasNextInt()) {
+        while (console.hasNextInt()) { // цикл работает пока вводим число
             int x = console.nextInt(); //считываем число в переменную х
             if (x > max) //сравниваем. если х больше максимального числа
                 max = x;// то выводим максимум

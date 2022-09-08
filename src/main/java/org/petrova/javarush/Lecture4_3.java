@@ -8,8 +8,7 @@ public class Lecture4_3 {
             n++;
         }
         a1();
-        System.out.println(" ");
-        System.out.println(" ");// как сделать 2 отсупа? нашла в инете какой-то padding,пробовала применить, не удалось
+        System.out.println("\r\n\r\n");
         a2();
     }
 
