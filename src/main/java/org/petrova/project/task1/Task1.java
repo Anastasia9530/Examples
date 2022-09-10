@@ -4,6 +4,7 @@ package org.petrova.project.task1;
 // 1.2 Аналитика выводится в консоль после ввода всех чисел
 // 1.3 Данные аналитики: кол-во чисел, максимальное, минимальное, кол-во четных и нечетных, сумма четных и нечетных, общая сумма и произведение всех чисел
 
+import java.io.File;
 import java.util.Scanner;
 
 public class Task1 {// задача 1
@@ -39,6 +40,7 @@ public class Task1 {// задача 1
             sumeven = sumeven + even;
             sumodd = sumodd + odd;
 
+
         }
         log("Выводим сумму: " + sum);//выводим сумму чисел
         log("Выводим количество чисел введенных пользователем: " + count);
@@ -50,8 +52,11 @@ public class Task1 {// задача 1
         log("Сумма четных и нечетных чисел,которые вывел пользователь: " + sum1);
         log("Сумма четных чисел: " + sumeven);
         log("Сумма нечетных чисел: " + sumodd);
+
     }
-    public static void log (String message){
+
+    public static void log(String message) {
         System.out.println(message);
     }
+
 }
