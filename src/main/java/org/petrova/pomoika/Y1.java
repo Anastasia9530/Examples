@@ -7,10 +7,12 @@ public class Y1 {
 
         m1();
 
-        int s1 = summ(1, 2, "result from s1");
+        String str1 = "result from s1";
+        int s1 = summ(1, 2, str1);
         int s2 = summ(10, 20, "result from s2");
         int s3 = summ(30, 40, "result from s3");
         int s4 = summ(5, 6, "result from s4");
+
 
         System.out.println("s1: " + s1 + " ,s2: " + s2 + ", s3: " + s3 + ", s4: " + s4);
 
