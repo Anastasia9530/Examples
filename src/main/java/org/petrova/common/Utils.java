@@ -1,5 +1,6 @@
 package org.petrova.common;
 
+
 public class Utils {
     public static void log(String str) {
         System.out.println(str);
@@ -11,5 +12,19 @@ public class Utils {
 
         Utils.log("");
     }
-}
 
+
+    public static void printArray(int[][] arrayForPrint) {
+
+        for (int y = 0; y < arrayForPrint[y].length; y++) {
+
+            for (int x = 0; x <arrayForPrint.length; x++) {
+
+                System.out.print(arrayForPrint[x][y]+" ");
+
+            }
+            Utils.log("");
+        }
+        Utils.log("");
+    }
+}
