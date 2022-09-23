@@ -2,6 +2,18 @@ package org.petrova.oop.task1;
 
 public class DogKnopka extends HomeAnimal {
 
+    public DogKnopka(String breed, Integer weight, Integer age, Integer price) {
+        super(breed, weight, age, price);
+    }
+
+    public DogKnopka(String breed, Integer weight, Integer age) {
+        super(breed, weight, age);
+    }
+
+    public DogKnopka() {
+        super(null, null, null);
+    }
+
     @Override
     public String getBreed() {
         return "Джек-Рассел";
@@ -18,5 +30,7 @@ public class DogKnopka extends HomeAnimal {
     }
 
     @Override
-    public Integer getPrice () {return 1000;}
+    public Integer getPrice() {
+        return 1000;
+    }
 }

@@ -1,13 +1,21 @@
 package org.petrova.oop.task1;
 
+import org.petrova.common.Utils;
+
 import java.util.Scanner;
 
 public class Task1 {
     public static void main(String[] args) {
+
+        Scanner console = new Scanner(System.in);
+        Utils.log("Введите возраст кота: ");
+        int ageCat = console.nextInt();
+
         Animal dog1 = new DogKnopka();
         Animal wolf1 = new Wolf(" Порода 1", 15, 1, 40);
         Animal wolf2 = new Wolf(" Порода 2", 30, 5, 50);
-        Animal cat1 = new Cat("Сфинкс",7,4);
+        Animal cat1 = new Cat("Сфинкс", 7,ageCat);
+
 
         print(dog1);
         print(wolf2);
