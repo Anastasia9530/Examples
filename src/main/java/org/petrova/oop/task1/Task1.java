@@ -14,9 +14,10 @@ public class Task1 {
         Animal dog1 = new DogKnopka();
         Animal wolf1 = new Wolf(" Порода 1", 15, 1, 40);
         Animal wolf2 = new Wolf(" Порода 2", 30, 5, 50);
-        Animal cat1 = new Cat("Сфинкс", 7,ageCat);
+        Animal cat1 = new Cat("Сфинкс", 7, ageCat);
 
 
+        print(dog1);
         print(dog1);
         print(wolf2);
         print(wolf1);
@@ -30,6 +31,14 @@ public class Task1 {
         System.out.println("Порода:" + animal.getBreed());
         System.out.println("Вес:" + animal.getWeight());
         System.out.println("Цена:" + animal.getPrice());
+
+        if (animal instanceof HomeAnimal) {
+            HomeAnimal homeAnimal = (HomeAnimal) animal;
+
+            System.out.println(" имя: " + homeAnimal.getName());
+        }
+
+
         System.out.println();
     }
 }

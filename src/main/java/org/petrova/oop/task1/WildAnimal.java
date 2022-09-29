@@ -10,6 +10,10 @@ public abstract class WildAnimal extends AbstractAnimal {
         super(breed, weight, age);
     }
 
+    public Integer getColor() {
+        return 1;
+    }
+
     public Boolean hasOwner() {
         return false;
     }

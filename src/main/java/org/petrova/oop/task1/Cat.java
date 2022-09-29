@@ -6,9 +6,13 @@ public class Cat extends WildAnimal {
         super(breed, weight, age);
     }
 
-
     @Override
     public Integer getPrice() {
         return 30000;
+    }
+
+    @Override
+    public Integer getColor() {
+        return 10;
     }
 }

@@ -11,5 +11,7 @@ public interface Animal {
 
     public Integer getPrice ();
 
+    public void  setAge (Integer newAge);
+
 }
 
