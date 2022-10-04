@@ -4,7 +4,7 @@ package org.petrova.project.task1;
 // 1.2 Аналитика выводится в консоль после ввода всех чисел
 // 1.3 Данные аналитики: кол-во чисел, максимальное, минимальное, кол-во четных и нечетных, сумма четных и нечетных, общая сумма и произведение всех чисел
 
-import java.io.File;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Task1 {// задача 1
@@ -12,6 +12,24 @@ public class Task1 {// задача 1
     public static void main(String[] args) {
         log("Введите числа");
         Scanner console = new Scanner(System.in);// создали объект сканер
+
+
+        ArrayList<Integer> list = new ArrayList<>();
+
+        while (console.hasNextInt()) //цикл
+        {
+            int x = console.nextInt();// переменная х - выводим в консоль,пользователь вводит числа
+            list.add(x);
+        }
+        calculateAndPrintAnalytics(list);
+    }
+
+    public static void log(String message) {
+        System.out.println(message);
+    }
+
+    public static void calculateAndPrintAnalytics(ArrayList<Integer> list) {
+
         int sum = 0; // создаем переменную где храним сумму
         int count = 0; //! храним кол-во чисел
         int max = Integer.MIN_VALUE; // максимально число введенное пользовательем
@@ -22,26 +40,24 @@ public class Task1 {// задача 1
         int sum1 = 0; // храним сумму четных и нечетных
         int sumeven = 0; // сумма всех четных
         int sumodd = 0;// сумма всех нечетных
-        while (console.hasNextInt()) //цикл
-        {
-            int x = console.nextInt();// переменная х - выводим в консоль,пользователь вводит числа
-            sum = sum + x;
+
+        for (Integer i : list) {
+            sum = sum + i;
             count++;
-            if (x > max)
-                max = x;
-            if (x < min)
-                min = x;
-            if (x % 2 == 0)//чтобы узнать, что число четное, делим на 2. сравниваем.Остаток ноль
+            if (i > max)
+                max = i;
+            if (i < min)
+                min = i;
+            if (i % 2 == 0)//чтобы узнать, что число четное, делим на 2. сравниваем.Остаток ноль
                 even++;// повторяем виток цикла
             else // если делим на 2 с остатком, то
                 odd++; // считаем виток цикла нечетных чисел
-            result *= x;//считаем произведение введенных чисел
+            result *= i;//считаем произведение введенных чисел
             sum1 = even + odd;
             sumeven = sumeven + even;
             sumodd = sumodd + odd;
-
-
         }
+
         log("Выводим сумму: " + sum);//выводим сумму чисел
         log("Выводим количество чисел введенных пользователем: " + count);
         log("Максимальное число введенное пользователем: " + max);
@@ -52,11 +68,5 @@ public class Task1 {// задача 1
         log("Сумма четных и нечетных чисел,которые вывел пользователь: " + sum1);
         log("Сумма четных чисел: " + sumeven);
         log("Сумма нечетных чисел: " + sumodd);
-
     }
-
-    public static void log(String message) {
-        System.out.println(message);
-    }
-
 }
