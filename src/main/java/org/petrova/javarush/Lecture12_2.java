@@ -10,16 +10,12 @@ public class Lecture12_2 { // Работа с  Array
         // ввод строк с клавиатуры
         String[] list = new String[10];
 
-        for (
-                int i = 0;
-                i < list.length; i++) {
+        for (int i = 0; i < list.length; i++) {
             String s = console.nextLine();
             list[i] = s;
         }
 // вывод содержимого массива на экран
-        for (
-                int i = 0;
-                i < list.length; i++) {
+        for (int i = 0; i < list.length; i++) {
             int j = list.length - i - 1;
             System.out.println(list[j]);
 
