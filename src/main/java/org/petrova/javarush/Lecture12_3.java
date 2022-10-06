@@ -10,8 +10,8 @@ public class Lecture12_3 { // Практические примеры работ
             if (i % 2 == 0)
                 list.add(i);
 
-        for (int i = 0; i < list.size(); i++)//цикл от нуля до размера списка
-            System.out.println(list.get(i));//выводим каждый элемент на экран
+        for (int i = 0; i < list.size(); i++)  //цикл от нуля до размера списка
+            System.out.println(list.get(i));  //выводим каждый элемент на экран
 
         a1();
         a2();
