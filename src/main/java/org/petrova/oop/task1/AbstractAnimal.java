@@ -7,6 +7,7 @@ public abstract class AbstractAnimal implements Animal {
     private Integer age;
     private Integer price;
 
+
     public AbstractAnimal(String breed, Integer weight, Integer age, Integer price) {
         this.breed = breed;
         this.weight = weight;
@@ -39,6 +40,12 @@ public abstract class AbstractAnimal implements Animal {
     public Integer getPrice() {
         return this.price;
     }
+
+    @Override
+    public void setAge(Integer newAge) {
+        age = newAge;
+    }
+
     // public AbstractAnimal() {
     //}
 }
