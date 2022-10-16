@@ -9,9 +9,12 @@ public abstract class AbsrtactCalculation {
 
     public void process() {
         ArrayList<Integer> a1 = getData();
+        AnalyticsData a2 = calculateAnalytics(a1);
+
+        printAnalytics(a2);
     }
 
-    public AnalyticsData calculateAnalytics(ArrayList<Integer> list) {
+    public AnalyticsData calculateAnalytics(ArrayList<Integer> list) {  // считаем аналитику
 
         int sum = 0; // создаем переменную где храним сумму
         int count = 0; //! храним кол-во чисел
