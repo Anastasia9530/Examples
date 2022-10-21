@@ -2,7 +2,7 @@ package org.petrova.project.task1;
 
 import java.util.ArrayList;
 
-public abstract class AbsrtactCalculation {
+public abstract class AbstractCalculation {
 
     abstract ArrayList<Integer> getData();
 
