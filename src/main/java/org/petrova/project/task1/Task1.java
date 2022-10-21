@@ -4,26 +4,25 @@ package org.petrova.project.task1;
 // 1.2 Аналитика выводится в консоль после ввода всех чисел
 // 1.3 Данные аналитики: кол-во чисел, максимальное, минимальное, кол-во четных и нечетных, сумма четных и нечетных, общая сумма и произведение всех чисел
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class Task1 {// задача 1
 
     public static void main(String[] args) {
-        log("Введите числа");
-        Scanner console = new Scanner(System.in);// создали объект сканер
+        AbstractCalculation.log("Введите числа");
 
-
-        ArrayList<Integer> list = new ArrayList<>();
-
-        while (console.hasNextInt()) //цикл
-        {
-            int x = console.nextInt();// переменная х - выводим в консоль,пользователь вводит числа
-            list.add(x);
-        }
-//        calculateAndPrintAnalytics(list);
-        AnalyticsData a2 = calculateAnalytics(list);
-        printAnalytics(a2);
+        AbstractCalculation a;
+        a = new CalculationVariant1();
+        a.process();
     }
 }
+
+
+//      Scanner console = new Scanner(System.in);// создали объект сканер
+//      ArrayList<Integer> list = new ArrayList<>();
+
+//   while (console.hasNextInt()) //цикл
+//        {
+//            int x = console.nextInt();// переменная х - выводим в консоль,пользователь вводит числа
+//            list.add(x);
+//        }
+//        calculateAndPrintAnalytics(list);
 
