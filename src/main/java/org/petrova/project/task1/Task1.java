@@ -16,13 +16,4 @@ public class Task1 {// задача 1
 }
 
 
-//      Scanner console = new Scanner(System.in);// создали объект сканер
-//      ArrayList<Integer> list = new ArrayList<>();
-
-//   while (console.hasNextInt()) //цикл
-//        {
-//            int x = console.nextInt();// переменная х - выводим в консоль,пользователь вводит числа
-//            list.add(x);
-//        }
-//        calculateAndPrintAnalytics(list);
 
