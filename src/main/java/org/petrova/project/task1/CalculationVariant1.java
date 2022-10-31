@@ -9,6 +9,8 @@ public class CalculationVariant1 extends AbstractCalculation {
 
     @Override
     ArrayList<Integer> getData() {
+
+        AbstractCalculation.log("Введите числа");
         Scanner console = new Scanner(System.in);// создали объект сканер
         ArrayList<Integer> list = new ArrayList<>();
 
