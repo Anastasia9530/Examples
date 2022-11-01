@@ -1,20 +1,21 @@
 package org.petrova.project.task1;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class AbstractCalculation {
 
-    abstract ArrayList<Integer> getData();
+    abstract List<Integer> getData();
 
 
     public void process() {
-        ArrayList<Integer> a1 = getData();
+        List<Integer> a1 = getData();
         AnalyticsData a2 = calculateAnalytics(a1);
 
         printAnalytics(a2);
     }
 
-    public AnalyticsData calculateAnalytics(ArrayList<Integer> list) {  // считаем аналитику
+    public AnalyticsData calculateAnalytics(List<Integer> list) {  // считаем аналитику
 
         int sum = 0; // создаем переменную где храним сумму
         int count = 0; //! храним кол-во чисел
