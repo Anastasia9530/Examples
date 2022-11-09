@@ -5,6 +5,7 @@ import org.petrova.common.Utils;
 public class Dog {
     String name ;
     String says ;
+
     public static void main(String[]args){
 
         Dog dog1 = new Dog();
@@ -19,8 +20,9 @@ public class Dog {
         Utils.log("name: "+ dog2.name+","+"says:" + dog2.says);
 
         Dog spot = new Dog();
-        System.out.println( spot == dog1);
-        System.out.println( spot != dog1);
-        System.out.println (spot.equals(dog1));
+
+        Utils.log(String.valueOf(spot == dog1));
+        Utils.log(String.valueOf(spot != dog1));
+        Utils.log(String.valueOf(spot.equals(dog1)));
     }
 }
