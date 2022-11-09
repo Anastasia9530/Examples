@@ -5,6 +5,7 @@ public class Utils {
     public static void log(String str) {
         System.out.println(str);
     }
+
     public static void print(String str) {
         System.out.print(str);
     }
@@ -14,7 +15,6 @@ public class Utils {
             System.out.print(arrayForPrint[i] + " ");
 
         Utils.log("");
-        Utils.print(" ");
     }
 
 
@@ -22,13 +22,17 @@ public class Utils {
 
         for (int y = 0; y < arrayForPrint[y].length; y++) {
 
-            for (int x = 0; x <arrayForPrint.length; x++) {
+            for (int x = 0; x < arrayForPrint.length; x++) {
 
-                System.out.print(arrayForPrint[x][y]+" ");
+                System.out.print(arrayForPrint[x][y] + " ");
 
             }
             Utils.log("");
         }
         Utils.log("");
+    }
+
+    public static void print (Boolean b) {
+        System.out.println(b);
     }
 }
