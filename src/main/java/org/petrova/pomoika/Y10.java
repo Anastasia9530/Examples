@@ -12,6 +12,8 @@ public class Y10 {
         a2();
         a3();
         a4();
+        a5();
+        a6();
     }
 
     public static void a1() {
@@ -43,5 +45,20 @@ public class Y10 {
         int a = 3;
         var str = " " + a + (a++ - a) + ++a + (a++ + --a) + ++a + a;
         Utils.log(str);
+    }
+
+    public static void a5() {
+
+        int a = 5;
+        var str = " " + ++a + ++a + (++a + ++a) + (a + (a + a--)) + a;
+        //               6     7     17           27                8
+        System.out.println(str);
+    }
+        public static void a6() {
+        var a = 10;
+        var b = a;
+        var str = "8" + --a + (++b * 2) + (b-- * 2) + a-- + (a - 1) + (--a - a--) + a + --b;
+        //           8    9     22          22        9      7         0(-1)        6    9
+        System.out.println(str);
     }
 }
