@@ -1,5 +1,10 @@
 package org.petrova.tasksAbramyan;
 
+import org.petrova.common.Utils;
+
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Task_Integer1 {
@@ -20,7 +25,7 @@ public class Task_Integer1 {
         a1();
         a2();
         a3();
-        //a4();
+        a4();
     }
 
     public static void a1() {
@@ -55,9 +60,40 @@ public class Task_Integer1 {
     }
 
     public static void a3() {
-        // Дано целое число, большее 999. используя одну операцию деления
-        // нацело и одну операцию взятия остатка от деления, найти цифру, соответствующую разряду сотен в записи этого числа.
 
+        //     Дни недели пронумерованы следующим образом: 1 — понедельник,
+        //     2 — вторник, …, 6 — суббота, 7 — воскресенье. Дано целое число K, лежащее в диапазоне 1–365. Определить номер дня недели для K-го дня года,
+        //    если известно, что в этом году 1 января было субботой.
 
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Введите число в диапазоне 1-365:");
+        int k = in.nextInt();
+
+        int weeks = k / 7;
+        int dayOfWeek = k - (weeks * 7) - 1;
+
+        String str[] = {"сб", "вс", "пн", "вт", "ср", "чт", "пт"};
+
+        Utils.log("День недели: " + str[dayOfWeek]);
+
+    }
+
+    public static void a4() {
+
+        // вариант решения с коллекцией
+
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Введите число в диапазоне 1-365:");
+        int k = in.nextInt();
+
+        int weeks = k / 7;
+        int dayOfWeek = k - (weeks * 7) - 1;
+        
+
+        List<String> days =  List.of ("сб", "вс", "пн", "вт", "ср", "чт", "пт");
+
+        Utils.log("День недели: " + days.get(dayOfWeek));
     }
 }
