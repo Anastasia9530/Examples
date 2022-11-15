@@ -14,7 +14,6 @@ public class Array1 {
         for (int i = 0, n = 1; i < matrix.length; i++, n = n + 2) {
             matrix[i] = n;
             Utils.print(" " + matrix[i]);
-
         }
         System.out.println(" ");
 

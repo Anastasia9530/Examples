@@ -13,7 +13,9 @@ public class Task2 {
     }
 
     public static void a1() {
+
         // Бесконечный цикл
+
         for (int i = 0; i < i + 1; i++) {
             Utils.log(i + " ");
         }

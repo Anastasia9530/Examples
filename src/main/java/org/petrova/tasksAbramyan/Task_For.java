@@ -5,24 +5,28 @@ import org.petrova.common.Utils;
 public class Task_For {
     public static void main(String[] args) {
 
-        //Даны целые числа N и K (K > 0). Вывести K раз число N.
-
-        for (int k = 0; k < 7; k++) {
-            System.out.println("1");
-        }
-
-        a1();
+        a0(4, 10);
+        a1(7.8);
     }
 
-    public static void a1() {
+    public static void a0(int N, int K) {
 
-//        Дано вещественное число — цена 1 кг конфет. Вывести стоимость 1,
-//        2, …, 10 кг конфет.
+        // Даны целые числа N и K (K > 0). Вывести K раз число N.
 
-        int kg = 1;
-        for (double price = 1.1; price < 11; price++) {
-            System.out.print("Цена " + kg++);
-            System.out.print("kg конфет: " + price);
+        for (int i = 0; i < K; i++) {
+            System.out.print(N);
+        }
+        Utils.log("");
+    }
+
+
+    public static void a1(double price) {
+
+        // Дано вещественное число — цена 1 кг конфет. Вывести стоимость 1,
+        // 2, …, 10 кг конфет.
+
+        for (int kg = 1; kg < 11; kg++) {
+            System.out.print("Цена " + kg + "кг конфет: " + price * kg);
             Utils.log("");
         }
     }
