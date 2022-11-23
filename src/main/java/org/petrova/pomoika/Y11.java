@@ -41,8 +41,8 @@ public class Y11 {
         Utils.log("Введите число: ");
         int number = in.nextInt();
 
-        if (number < 10 & number >= 0) {
-            Utils.log("Положительное число меньше 10 или 0");
+        if (number < 10 && number >= 0) {
+            Utils.log("Положительное число от 0 до 10");
         } else if (number > 10) {
             Utils.log("Положительно число больше 10");
         } else if (number < 0) {
