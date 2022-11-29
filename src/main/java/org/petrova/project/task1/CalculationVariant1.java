@@ -1,5 +1,7 @@
 package org.petrova.project.task1;
 
+import org.petrova.common.Utils;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -17,9 +19,15 @@ public class CalculationVariant1 extends AbstractCalculation {
         int x = 0;
         while (console.hasNextInt()) //цикл
         {
-           x = console.nextInt();
+            x = console.nextInt();
             list.add(x);
         }
         return list;
+    }
+
+    @Override
+    public void printAnalytics(AnalyticsData analyticsData) {
+
+        Utils.log("" + analyticsData);
     }
 }

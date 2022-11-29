@@ -1,18 +1,18 @@
 package org.petrova.project.task1;
 
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.List;
 
 public abstract class AbstractCalculation {
 
-    abstract List<Integer> getData();
+    abstract List<Integer> getData() throws IOException;
 
 
-    public void process() {
+    public void process() throws IOException {
         List<Integer> a1 = getData();
         AnalyticsData a2 = calculateAnalytics(a1);
 
-        printAnalytics(a2);
+        printAnalytics(a2); //
     }
 
     public AnalyticsData calculateAnalytics(List<Integer> list) {  // считаем аналитику
@@ -51,20 +51,7 @@ public abstract class AbstractCalculation {
         return a1;
     }
 
-    public void printAnalytics(AnalyticsData analyticsData) {
-
-
-        log("Выводим сумму: " + analyticsData.getSum());//выводим сумму чисел
-        log("Выводим количество чисел введенных пользователем: " + analyticsData.getCount());
-        log("Максимальное число введенное пользователем: " + analyticsData.getMax());
-        log("Минимальное число введенное пользователем: " + analyticsData.getMin());
-        log("Количество четных чисел: " + analyticsData.getEven());
-        log("Количество нечетных чисел: " + analyticsData.getOdd());
-        log("Произведение введенных чисел: " + analyticsData.getResult());
-        log("Сумма четных и нечетных чисел,которые вывел пользователь: " + analyticsData.getSum1());
-        log("Сумма четных чисел: " + analyticsData.getSumeven());
-        log("Сумма нечетных чисел: " + analyticsData.getSumodd());
-    }
+    abstract public void printAnalytics(AnalyticsData analyticsData) throws IOException;
 
     public static void log(String message) {
         System.out.println(message);

@@ -4,33 +4,26 @@ package org.petrova.project.task1;
 // 1.2 Аналитика выводится в консоль после ввода всех чисел
 // 1.3 Данные аналитики: кол-во чисел, максимальное, минимальное, кол-во четных и нечетных, сумма четных и нечетных, общая сумма и произведение всех чисел
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 
 public class Task1 {// задача 1
 
+
+    public static final String INPUT_FILE_NAME = "in.txt";
+    public static final String OUTPUT_FILE_NAME = "out.txt";
+
     public static void main(String[] args) throws IOException {
-        File file = new File("C:\\tmp\\in.txt");
+        File file = new File(INPUT_FILE_NAME);
 
         AbstractCalculation a;
 
         if (!file.exists()) {
             a = new CalculationVariant1();
-
         } else {
             a = new CalculationVariant2();
         }
         a.process();
-
-        String dest = "C:\\tmp\\out.txt";
-        String filePath = "C:\\tmp\\out.txt";
-        File file1 = new File(filePath);
-        BufferedWriter out = new BufferedWriter(new FileWriter(file1));
-        for (int i = 0; i < 100; i++)
-            out.write(i);
-        out.close();
 
     }
 }
