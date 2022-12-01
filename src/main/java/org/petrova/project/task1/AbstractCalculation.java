@@ -15,7 +15,7 @@ public abstract class AbstractCalculation {
         printAnalytics(a2); //
     }
 
-    public AnalyticsData calculateAnalytics(List<Integer> list) {  // считаем аналитику
+    public static AnalyticsData calculateAnalytics(List<Integer> list) {  // считаем аналитику
 
         int sum = 0; // создаем переменную где храним сумму
         int count = 0; //! храним кол-во чисел
@@ -23,11 +23,9 @@ public abstract class AbstractCalculation {
         int min = Integer.MAX_VALUE; // минимальное число введенное пользователем
         int even = 0;// кол-во четных чисел
         int odd = 0;// кол-во нечетных
-        int result = 1;  // храним произведение чисел
-        int sum1 = 0; // храним сумму четных и нечетных
+        int allMultiples = 1;  // храним произведение чисел
         int sumeven = 0; // сумма всех четных
         int sumodd = 0;// сумма всех нечетных
-
 
         for (Integer i : list) {
 
@@ -37,17 +35,18 @@ public abstract class AbstractCalculation {
                 max = i;
             if (i < min)
                 min = i;
-            if (i % 2 == 0)//чтобы узнать, что число четное, делим на 2. сравниваем.Остаток ноль
-                even++;// повторяем виток цикла
-            else // если делим на 2 с остатком, то
-                odd++; // считаем виток цикла нечетных чисел
-            result *= i;//считаем произведение введенных чисел
-            sum1 = even + odd;
-            sumeven = sumeven + even;
-            sumodd = sumodd + odd;
+            if (i % 2 == 0) {  //чтобы узнать, что число четное, делим на 2. сравниваем.Остаток ноль
+                even++;
+                sumeven = sumeven + i;
+            } else { // считаем сумму нечетных чисел
+                (odd)++;
+                sumodd = sumodd + i;
+            }
+            allMultiples = allMultiples * i; //считаем произведение введенных чисел
+
         }
 
-        AnalyticsData a1 = new AnalyticsData(sum, count, max, min, even, odd, result, sum1, sumeven, sumodd);
+        AnalyticsData a1 = new AnalyticsData(sum, count, max, min, even, odd, allMultiples, sumeven, sumodd);
         return a1;
     }
 

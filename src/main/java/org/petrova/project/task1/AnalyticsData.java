@@ -7,20 +7,18 @@ public class AnalyticsData {
     private Integer min;
     private Integer even;
     private Integer odd;
-    private Integer result;
-    private Integer sum1;
+    private Integer allMultiples;
     private Integer sumeven;
     private Integer sumodd;
 
-    public AnalyticsData(Integer sum, Integer count, Integer max, Integer min, Integer even, Integer odd, Integer result, Integer sum1, Integer sumeven, Integer sumodd) {
+    public AnalyticsData(Integer sum, Integer count, Integer max, Integer min, Integer even, Integer odd, Integer allMultiples,  Integer sumeven, Integer sumodd) {
         this.sum = sum;
         this.count = count;
         this.max = max;
         this.min = min;
         this.even = even;
         this.odd = odd;
-        this.result = result;
-        this.sum1 = sum1;
+        this.allMultiples = allMultiples;
         this.sumeven = sumeven;
         this.sumodd = sumodd;
     }
@@ -49,12 +47,8 @@ public class AnalyticsData {
         return this.odd;
     }
 
-    public Integer getResult() {
-        return this.result;
-    }
-
-    public Integer getSum1() {
-        return this.sum1;
+    public Integer getAllMultiples() {
+        return this.allMultiples;
     }
 
     public Integer getSumeven() {
@@ -74,8 +68,7 @@ public class AnalyticsData {
                 "Минимальное число введенное пользователем:  " + min + "\n" +
                 "Количество четных чисел: " + even + "\n" +
                 "Количество нечетных чисел: " + odd + "\n" +
-                "Произведение введенных чисел: " + result + "\n" +
-                "Сумма четных и нечетных чисел,которые вывел пользователь: " + sum1 + "\n" +
+                "Произведение введенных чисел: " + allMultiples + "\n" +
                 "Сумма четных чисел: " + sumeven + "\n" +
                 "Сумма нечетных чисел: " + sumodd + "\n";
     }
