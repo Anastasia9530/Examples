@@ -17,21 +17,14 @@ public class CalculationVariant2 extends AbstractCalculation {
     }
 
     @Override
-    List<Integer> getData() {
+    List<Integer> getData() throws IOException {
 
         String fileName = INPUT_FILE_NAME;
 
-        try {
-            return Files.readAllLines(Paths.get(fileName)).stream()
-                    .map(k -> Integer.parseInt(k))
-                    .collect(Collectors.toList());
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return List.of();
+        return Files.readAllLines(Paths.get(fileName)).stream()
+                .map(k -> Integer.parseInt(k))
+                .collect(Collectors.toList());
     }
-
 
     public void printAnalytics(AnalyticsData analyticsData) throws IOException {
 
@@ -40,4 +33,6 @@ public class CalculationVariant2 extends AbstractCalculation {
         Files.write(Paths.get(OUTPUT_FILE_NAME), lines, StandardCharsets.UTF_8, StandardOpenOption.CREATE_NEW);
     }
 }
+
+
 

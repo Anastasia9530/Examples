@@ -2,6 +2,7 @@ package org.petrova.project.task1;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public abstract class AbstractCalculation {
 
@@ -15,10 +16,13 @@ public abstract class AbstractCalculation {
         printAnalytics(a2); //
     }
 
-    public static AnalyticsData calculateAnalytics(List<Integer> list) {  // считаем аналитику
+    public static AnalyticsData calculateAnalytics(List<Integer> list) throws NoSuchElementException {  // считаем аналитику
 
-        int sum = 0; // создаем переменную где храним сумму
+        if (list.isEmpty())
+            throw new NoSuchElementException();
+
         int count = 0; //! храним кол-во чисел
+        int sum = 0; // создаем переменную где храним сумму
         int max = Integer.MIN_VALUE; // максимально число введенное пользовательем
         int min = Integer.MAX_VALUE; // минимальное число введенное пользователем
         int even = 0;// кол-во четных чисел
@@ -37,17 +41,15 @@ public abstract class AbstractCalculation {
                 min = i;
             if (i % 2 == 0) {  //чтобы узнать, что число четное, делим на 2. сравниваем.Остаток ноль
                 even++;
-                sumeven = sumeven + i;
+                sumeven += i;
             } else { // считаем сумму нечетных чисел
-                (odd)++;
-                sumodd = sumodd + i;
+                odd++;
+                sumodd += i;
             }
-            allMultiples = allMultiples * i; //считаем произведение введенных чисел
-
+            allMultiples *= i; //считаем произведение введенных чисел
         }
 
-        AnalyticsData a1 = new AnalyticsData(sum, count, max, min, even, odd, allMultiples, sumeven, sumodd);
-        return a1;
+        return new AnalyticsData(sum, count, max, min, even, odd, allMultiples, sumeven, sumodd);
     }
 
     abstract public void printAnalytics(AnalyticsData analyticsData) throws IOException;
@@ -56,4 +58,5 @@ public abstract class AbstractCalculation {
         System.out.println(message);
     }
 }
+
 

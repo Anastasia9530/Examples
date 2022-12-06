@@ -4,8 +4,11 @@ package org.petrova.project.task1;
 // 1.2 Аналитика выводится в консоль после ввода всех чисел
 // 1.3 Данные аналитики: кол-во чисел, максимальное, минимальное, кол-во четных и нечетных, сумма четных и нечетных, общая сумма и произведение всех чисел
 
+import org.petrova.common.Utils;
+
 import java.io.File;
 import java.io.IOException;
+import java.util.NoSuchElementException;
 
 public class Task1 {// задача 1
 
@@ -18,13 +21,23 @@ public class Task1 {// задача 1
 
         AbstractCalculation a;
 
-        if (!file.exists()) {
+        if (!file.exists())
             a = new CalculationVariant1();
-        } else {
+        else
             a = new CalculationVariant2();
-        }
-        a.process();
 
+        try {
+            a.process();
+        } catch (IOException e) {
+            Utils.log("Содержимое файла не соответствует заданной кодировке");
+            e.printStackTrace();
+        } catch (NumberFormatException e) {
+            Utils.log("Неверный формат данных в файле");
+            e.printStackTrace();
+        } catch (NoSuchElementException e) {
+            Utils.log("Нет данных для обработки");
+            e.printStackTrace();
+        }
     }
 }
 

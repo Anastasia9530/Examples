@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class TestCalculation {
     @Test
@@ -72,7 +73,7 @@ public class TestCalculation {
 
     @Test
     void testCalculation5() {
-        var inputData = List.of(-10,-20,-30);
+        var inputData = List.of(-10, -20, -30);
         var result = AbstractCalculation.calculateAnalytics(inputData);
 
         Assertions.assertEquals(result.getCount(), 3);
@@ -84,5 +85,10 @@ public class TestCalculation {
         Assertions.assertEquals(result.getSumeven(), -60);
         Assertions.assertEquals(result.getSumodd(), 0);
         Assertions.assertEquals(result.getAllMultiples(), -6000);
+    }
+
+    @Test
+    void testCalculationEmptyValues() {
+        Assertions.assertThrows(NoSuchElementException.class, () -> AbstractCalculation.calculateAnalytics(List.of()));
     }
 }
