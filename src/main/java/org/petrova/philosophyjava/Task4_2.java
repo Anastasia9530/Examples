@@ -68,10 +68,14 @@ public class Task4_2 {
     }
 
     public static void a4() {
-        Random rand = new Random(47);
+        Random rand = new Random();
         Set<Integer> inset = new HashSet<>();
+
+
         for (int i = 0; i < 100; i++)
-            inset.add(rand.nextInt(10));
+            inset.add(rand.nextInt(17));
+
+
         Utils.log(inset + " ");
     }
 }
