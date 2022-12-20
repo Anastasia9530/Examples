@@ -19,3 +19,15 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+jar {
+    manifest {
+        attributes("Main-Class": "org.petrova.project.task1.Task1")
+    }
+}
