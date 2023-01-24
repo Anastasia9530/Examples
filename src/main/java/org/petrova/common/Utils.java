@@ -1,6 +1,9 @@
 package org.petrova.common;
 
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Utils {
     public static void log(String str) {
         System.out.println(str);
@@ -32,7 +35,16 @@ public class Utils {
         Utils.log("");
     }
 
-    public static void print (Boolean b) {
+    public static void log2(String str) {
+
+        Date date = new Date(System.currentTimeMillis());
+        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss.sss");
+        System.out.println(formatter.format(date) + " [" + Thread.currentThread().getName() + "] " + str);
+
+    }
+
+    public static void print(Boolean b) {
         System.out.println(b);
     }
 }
+
